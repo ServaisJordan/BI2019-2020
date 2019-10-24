@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{7A946B12-250D-47D8-A7D4-68D9F2E7F8E0}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{D7545C50-826D-4870-832F-BB34597EF173}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\HP\Desktop\BI\dates.txt">
+          DTS:ConnectionString="C:\Users\jorda\Desktop\BI2019-2020\dates.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="DateInput"
-              DTS:DTSID="{07003B2F-CBCC-4F9E-9E70-2F43C07AC70C}"
+              DTS:DTSID="{32B7D953-356D-4178-BCAC-E8D325677AF5}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -139,9 +139,1482 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2EFF443F-CE5D-44FB-A92E-28D63CCF2DE9}"
+      DTS:ObjectName="vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=vm-sql2.iesn.Be;User ID=1920_EtuGenerique;Initial Catalog=1920_etu35244_BIETLCommun;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwJ0We0CAUEKUkb5EqPygRgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAAA1iS3U8TVld8SHfmsT5/0xpcVUl/y7Z4E+0DN3SYhwAAAAAOgAAAAAIAACAAAABryEQ2QgcO4CUMCRFtW4aP/sRlNgUIy+d4d9bsd7lvbCAAAAABF2siA4XuIJhslY69SB12ql3I9B7mVCWOKVXq9gcpr0AAAACF0ASTWGvrGEzmIkUv105lBGIVPXVfbMWdRRVtPogZdFYwv0dTnocT4+8wPdvhQr0EmU0Ds9bPMgYbRHxntdgZ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vm-sql2.iesn.be.StackOverflow2.1920_EtuGenerique]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F8678BAA-6A36-41F3-BA47-168E96E4A0D0}"
+      DTS:ObjectName="vm-sql2.iesn.be.StackOverflow2.1920_EtuGenerique">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=vm-sql2.iesn.be;User ID=1920_EtuGenerique;Initial Catalog=StackOverflow2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwJ0We0CAUEKUkb5EqPygRgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWGR5dpQhPKh+gribVeQQpV3qDTKINRoo/Lz1a3WUX5QAAAAAOgAAAAAIAACAAAACboaw7f5DHCqw971hWUsUIWM4zFJM66zZMuWfMHQE83SAAAABJ4USbijEFPpM8ei4DnrxrmHz+4faKc5tRa3EPmEbKzkAAAAA01CoHT4Re6ZnunfgByXqxjamSAv1NKOkWI3BRuBRuKeQzGTFB6Ee3N46o8L0f7XtCHMBGRT9UWNgG7AjuGSj4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche BD stackoverflow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{7297A47F-55C2-46B0-8D82-357FCD706581}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche BD stackoverflow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche BD stackoverflow\Composant Script"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Inclut et exécute un code de script personnalisé. Par exemple, appliquez une règle d'entreprise qui limite la plage des valeurs valides dans une colonne « revenus » ou ajoutez des valeurs dans deux colonnes et calculez la moyenne de la somme.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;11"
+              description="Inclut et exécute un code de script personnalisé. Par exemple, appliquez une règle d'entreprise qui limite la plage des valeurs valides dans une colonne « revenus » ou ajoutez des valeurs dans deux colonnes et calculez la moyenne de la somme."
+              name="Composant Script"
+              version="11">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stocke le code source du composant"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Entrée 0", StringComparison.Ordinal))
+        {
+            Entrée0_ProcessInput(new Entrée0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Entrée0_ProcessInput(Entrée0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Entrée0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Entrée0_ProcessInputRow(Entrée0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Entrée0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Entrée0_ProcessInputRow(Entrée0Buffer Row)
+    {
+        
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Entrée0Buffer: ScriptBuffer
+
+{
+    public Entrée0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties.Settings.get_Default():SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties.Sett" +
+    "ings")]
+
+namespace SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_6b94ceb3c0474caca2e4a91f4cab83cd.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{760f7680-5132-48ec-89ae-1a48456880ba}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_6b94ceb3c0474caca2e4a91f4cab83cd</RootNamespace>
+    <AssemblyName>SC_6b94ceb3c0474caca2e4a91f4cab83cd</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_6b94ceb3c0474caca2e4a91f4cab83cd" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_6b94ceb3c0474caca2e4a91f4cab83cd</msb:CodeName>
+    <msb:DisplayName>SC_6b94ceb3c0474caca2e4a91f4cab83cd</msb:DisplayName>
+    <msb:ProjectId>{AD55DBD1-9F66-41EB-BFAE-49505695727A}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_6b94ceb3c0474caca2e4a91f4cab83cd.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_6b94ceb3c0474caca2e4a91f4cab83cd")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_6b94ceb3c0474caca2e4a91f4cab83cd")]
+[assembly: AssemblyCopyright("Copyright @  2019")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_6b94ceb3c0474caca2e4a91f4cab83cd.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stocke la représentation binaire du composant"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_6b94ceb3c0474caca2e4a91f4cab83cd.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFZ6sV0AAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAai8A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABgvAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAcA8AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABM
+LwAAAAAAAEgAAAACAAUAXCEAAAQNAAABAAAAAAAAAGAuAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioGKh4CKAgAAAYqKgIDBAUoEgAA
+CioeAigTAAAKKh4CKBQAAAoqfgIoFQAACgICcwwAAAZ9AQAABAICcw0AAAZ9AgAABCqSBHIBAABw
+Gm8WAAAKLBUCBQIDKBcAAAoOBHMFAAAGbwoAAAYqSisHAgNvCwAABgNvBgAABi3xKjoCKBgAAAoC
+A30DAAAEKjoCKBgAAAoCA30EAAAEKh4CKBgAAAoqrn4FAAAELR5yEwAAcNAHAAACKBkAAApvGgAA
+CnMbAAAKgAUAAAR+BQAABCoafgYAAAQqHgKABgAABCoafgcAAAQqHgIoHAAACioucxMAAAaABwAA
+BCoAAABCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAAC8BAAAI34AACgFAADMBQAA
+I1N0cmluZ3MAAAAA9AoAAIgAAAAjVVMAfAsAABAAAAAjR1VJRAAAAIwLAAB4AQAAI0Jsb2IAAAAA
+AAAAAgAAAVcVoAEJAQAAAPoBMwAWAAABAAAAHgAAAAgAAAAHAAAAFAAAAA0AAAAcAAAAEAAAAAIA
+AAADAAAABAAAAAEAAAAEAAAAAQAAAAAA6gIBAAAAAAAGAOQBAAQGAHgCAAQGADAB7QMPAHQEAAAG
+AF0BWgMGAMcBWgMGAKgBWgMGAF8CWgMGAAQCWgMGAB0CWgMGAHQBWgMGAI8BswIKADgCfQAKAL8D
+fQAOALADfQAKAIkDfQAKADoFfQAGAP0EEgMGABMB7QMGANADIAQGAH0DRQMSAOMA1AISAEQB1AIS
+AMsAMAMGAPgAAAQGAM0CEgMGAGwDEgMGAJ4AEgMGAE8AEgMGAMMFWgMAAAAAAQAAAAAAAQABAAEA
+EAAlAwAAEAABAAEAAQAQAKEDAAA5AAEABQABABAAHAUAAEUAAQAIAAEAEADxBAAASQADAAwAAQAQ
+ALIEAABJAAQADQAAABAAJwSDBEkABQAOAAABEADhBIMEYQAHABIABgDxBFsABgCyBF8AAQAqBWMA
+AQAqBWMAEQAZA2cAEQC7AGsAEQA/AG8AUCAAAAAAxgCWAgYAAQBYIAAAAADGAKECBgABAGAgAAAA
+AMYAngVzAAEAYiAAAAAAhhjgAwYAAgBqIAAAAACGGOADGwACAHUgAAAAAIYAtwUlAAUAfSAAAAAA
+hgAEBSUABQCFIAAAAACGGOADBgAFAKUgAAAAAMYAkQV5AAUAyiAAAAAAxgGIBXMACQBgIAAAAADG
+AZ4FcwAKAN0gAAAAAIYY4AODAAsA7CAAAAAAhhjgA4MADAD7IAAAAACDGOADBgANAAMhAAAAAJMI
+zAOJAA0ALyEAAAAAkwijAI4ADQA2IQAAAACTCK8AkwANAD4hAAAAAJYIEAWZAA4ARSEAAAAAhhjg
+AwYADgBNIQAAAACRGOYDngAOAAAAAQC7BQAAAQDFAwAAAgC8BAAAAwCXAwAAAQAKAAAAAgBzAAAA
+AwDFAwAABACXAwAAAQDFAwAAAQC7BQAAAQBABQAAAQBABQAAAQCtAgkA4AMBABEA4AMGABkA4AMK
+ACkA4AMQADEA4AMQADkA4AMQAEEA4AMQAEkA4AMQAFEA4AMQAFkA4AMQAGEA4AMQAGkA4AMGAJkA
+4AMGALkA4AMVAMkA4AMGAIkAlgIGAIkAoQIGAHEA4AMbAHEAtwUlAHEABAUlAIkA4AMGANEA6gQp
+AIkA0AQwAJEA4AMGAOEAYQA2AOEAvwU9AKEA4ANCAMEA4AMGACkAcwDZAC4ACwCxAC4AEwC6AC4A
+GwDZAC4AIwDiAC4AKwALAS4AMwALAS4AOwALAS4AQwDiAC4ASwARAS4AUwALAS4AWwAoAUMAYwBy
+AUkAcwDZAOEAewByAeMAawByAQcAAQAIAAMAAADQA6IAAADDAKcAAAAUBawAAgAPAAMAAgAQAAUA
+AQARAAUAAgASAAcABIAAAAEAAAAAAAAAAAAAAAAAGwAAAAQAAAAAAAAAAAAAAEkAEgAAAAAADgAA
+AAAAAAAAAAAAUgBKBQAAAAAOAAAAAAAAAAAAAABSAGcFAAAAAAQAAAAAAAAAAAAAAEkAEgMAAAAA
+AAAAAAEAAAAxBAAAAAAAPE1vZHVsZT4ASW5wdXRJRABtc2NvcmxpYgBTQ182Yjk0Y2ViM2MwNDc0
+Y2FjYTJlNGE5MWY0Y2FiODNjZABkZWZhdWx0SW5zdGFuY2UAUnVudGltZVR5cGVIYW5kbGUAR2V0
+VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5l
+AFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAEFwcGxpY2F0aW9u
+U2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmli
+dXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0
+b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRl
+bWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0
+aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxh
+eGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmln
+aHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1i
+bHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAFByZUV4ZWN1
+dGUAUG9zdEV4ZWN1dGUAdmFsdWUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBTdHJpbmcAU3lz
+dGVtLkNvbXBvbmVudE1vZGVsAFNDXzZiOTRjZWIzYzA0NzRjYWNhMmU0YTkxZjRjYWI4M2NkLmRs
+bABTeXN0ZW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0
+ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1
+cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAEVudHLDqWUwQnVmZmVyAFBpcGVsaW5lQnVm
+ZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAC5jdG9yAC5jY3RvcgBTeXN0ZW0u
+RGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3Vy
+Y2VzAFNDXzZiOTRjZWIzYzA0NzRjYWNhMmU0YTkxZjRjYWI4M2NkLlByb3BlcnRpZXMuUmVzb3Vy
+Y2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ182Yjk0Y2ViM2MwNDc0Y2FjYTJlNGE5MWY0
+Y2FiODNjZC5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVt
+bkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rpb25zAE9iamVjdABFbmRPZlJvd3NldABn
+ZXRfRGVmYXVsdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQA
+TWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5l
+SG9zdABFbnRyw6llMF9Qcm9jZXNzSW5wdXQARW50csOpZTBfUHJvY2Vzc0lucHV0Um93AE5leHRS
+b3cAZ2V0X0Fzc2VtYmx5AAARRQBuAHQAcgDpAGUAIAAwAAFxUwBDAF8ANgBiADkANABjAGUAYgAz
+AGMAMAA0ADcANABjAGEAYwBhADIAZQA0AGEAOQAxAGYANABjAGEAYgA4ADMAYwBkAC4AUAByAG8A
+cABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAADZsTaL4DfWRL65CFON3lZ9AAQg
+AQEIAyAAAQUgAQEREQQgAQEOBSABARFZCSADARI9HQgSQQMgAAIGIAICDhFtBSABHQgIBgABEnER
+dQQgABJ5BiACAQ4SeQi3elxWGTTgiQiJhF3NgIDMkQMGEhQDBhIYAwYSRQMGElEDBhJVAwYSIAUg
+AQESDAkgBAEIDhI9EkEFIAEBEkUEAAASUQQAABJVBQABARJVBAAAEiADAAABBAgAElEECAASVQQI
+ABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNT
+Q182Yjk0Y2ViM2MwNDc0Y2FjYTJlNGE5MWY0Y2FiODNjZAAABQEAAAAAFgEAEUNvcHlyaWdodCBA
+ICAyMDE5AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQOFEZyYW1ld29ya0Rpc3Bs
+YXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQQBAAAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJl
+c291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVy
+ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJj
+ZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAABALwAAAAAAAAAAAABa
+LwAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATC8AAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2Nv
+cmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAAOwDAAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsARMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAQwBfADYAYgA5ADQAYwBlAGIAMwBjADAANAA3ADQAYwBhAGMAYQAyAGUANABhADkAMQBm
+ADQAYwBhAGIAOAAzAGMAZAAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgAwAC4AMAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8ANgBiADkANABj
+AGUAYgAzAGMAMAA0ADcANABjAGEAYwBhADIAZQA0AGEAOQAxAGYANABjAGEAYgA4ADMAYwBkAC4A
+ZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBn
+AGgAdAAgAEAAIAAgADIAMAAxADkAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsA
+cwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwA2
+AGIAOQA0AGMAZQBiADMAYwAwADQANwA0AGMAYQBjAGEAMgBlADQAYQA5ADEAZgA0AGMAYQBiADgA
+MwBjAGQALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8ANgBi
+ADkANABjAGUAYgAzAGMAMAA0ADcANABjAGEAYwBhADIAZQA0AGEAOQAxAGYANABjAGEAYgA4ADMA
+YwBkAAAANAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAA
+ADgACAABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAABsPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom du projet Microsoft Visual Studio Tools for Applications. Les noms des projets doivent être uniques dans un package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_6b94ceb3c0474caca2e4a91f4cab83cd</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le langage de programmation utilisé par le script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une liste séparée par des virgules de variables en lecture seule."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une liste séparée par des virgules de variables en lecture/écriture."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Liste des points d'arrêt présents dans le script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Somme de contrôle pour faire correspondre les métadonnées de composant avec les codes compilés."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">39</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tâche BD stackoverflow\Composant Script.Inputs[Entrée 0]"
+                  hasSideEffects="true"
+                  name="Entrée 0">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche BD stackoverflow\Composant Script.Outputs[Sortie 0]"
+                  name="Sortie 0"
+                  synchronousInputId="Package\Tâche BD stackoverflow\Composant Script.Inputs[Entrée 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche BD stackoverflow\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[FactPost]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche BD stackoverflow\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+                  connectionManagerRefId="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateCreatedKey]"
+                      dataType="i4"
+                      name="DateCreatedKey" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Score]"
+                      dataType="i4"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[FavoriteCount]"
+                      dataType="i4"
+                      name="FavoriteCount" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ViewCount]"
+                      dataType="i4"
+                      name="ViewCount" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AnswerCount]"
+                      dataType="i4"
+                      name="AnswerCount" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PostKey]"
+                      dataType="i8"
+                      name="PostKey" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateClosedKey]"
+                      dataType="i4"
+                      name="DateClosedKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche BD stackoverflow\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche BD stackoverflow\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TOP(1000)*FROM Posts</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche BD stackoverflow\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vm-sql2.iesn.be.StackOverflow2.1920_EtuGenerique]"
+                  connectionManagerRefId="Package.ConnectionManagers[vm-sql2.iesn.be.StackOverflow2.1920_EtuGenerique]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Id]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AcceptedAnswerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AcceptedAnswerId]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AcceptedAnswerId]"
+                      name="AcceptedAnswerId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AnswerCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AnswerCount]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AnswerCount]"
+                      name="AnswerCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Body]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Body]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Body]"
+                      name="Body"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ClosedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ClosedDate]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ClosedDate]"
+                      name="ClosedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommentCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommentCount]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommentCount]"
+                      name="CommentCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommunityOwnedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommunityOwnedDate]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommunityOwnedDate]"
+                      name="CommunityOwnedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CreationDate]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CreationDate]"
+                      name="CreationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FavoriteCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[FavoriteCount]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[FavoriteCount]"
+                      name="FavoriteCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastActivityDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastActivityDate]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastActivityDate]"
+                      name="LastActivityDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastEditDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastEditDate]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastEditDate]"
+                      name="LastEditDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastEditorDisplayName]"
+                      length="40"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastEditorDisplayName]"
+                      name="LastEditorDisplayName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastEditorUserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastEditorUserId]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[LastEditorUserId]"
+                      name="LastEditorUserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OwnerUserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OwnerUserId]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OwnerUserId]"
+                      name="OwnerUserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ParentId]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentId]"
+                      name="ParentId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PostTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[PostTypeId]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PostTypeId]"
+                      name="PostTypeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Score]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Score]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Score]"
+                      name="Score"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Tags]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Tags]"
+                      length="150"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Tags]"
+                      name="Tags"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Title]"
+                      length="250"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ViewCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ViewCount]"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ViewCount]"
+                      name="ViewCount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AcceptedAnswerId]"
+                      dataType="i4"
+                      name="AcceptedAnswerId" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AnswerCount]"
+                      dataType="i4"
+                      name="AnswerCount" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Body]"
+                      dataType="nText"
+                      name="Body" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ClosedDate]"
+                      dataType="dbTimeStamp"
+                      name="ClosedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommentCount]"
+                      dataType="i4"
+                      name="CommentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommunityOwnedDate]"
+                      dataType="dbTimeStamp"
+                      name="CommunityOwnedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      name="CreationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[FavoriteCount]"
+                      dataType="i4"
+                      name="FavoriteCount" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastActivityDate]"
+                      dataType="dbTimeStamp"
+                      name="LastActivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastEditDate]"
+                      dataType="dbTimeStamp"
+                      name="LastEditDate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      length="40"
+                      name="LastEditorDisplayName" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[LastEditorUserId]"
+                      dataType="i4"
+                      name="LastEditorUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OwnerUserId]"
+                      dataType="i4"
+                      name="OwnerUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ParentId]"
+                      dataType="i4"
+                      name="ParentId" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[PostTypeId]"
+                      dataType="i4"
+                      name="PostTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Score]"
+                      dataType="i4"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Tags]"
+                      dataType="wstr"
+                      length="150"
+                      name="Tags" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="250"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ViewCount]"
+                      dataType="i4"
+                      name="ViewCount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AcceptedAnswerId]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AcceptedAnswerId]"
+                      name="AcceptedAnswerId" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AnswerCount]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AnswerCount]"
+                      name="AnswerCount" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Body]"
+                      dataType="nText"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Body]"
+                      name="Body" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ClosedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ClosedDate]"
+                      name="ClosedDate" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommentCount]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommentCount]"
+                      name="CommentCount" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommunityOwnedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommunityOwnedDate]"
+                      name="CommunityOwnedDate" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CreationDate]"
+                      name="CreationDate" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[FavoriteCount]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[FavoriteCount]"
+                      name="FavoriteCount" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastActivityDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastActivityDate]"
+                      name="LastActivityDate" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastEditDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastEditDate]"
+                      name="LastEditDate" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastEditorDisplayName]"
+                      name="LastEditorDisplayName" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastEditorUserId]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[LastEditorUserId]"
+                      name="LastEditorUserId" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OwnerUserId]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OwnerUserId]"
+                      name="OwnerUserId" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ParentId]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ParentId]"
+                      name="ParentId" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[PostTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[PostTypeId]"
+                      name="PostTypeId" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Score]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Score]"
+                      name="Score" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Tags]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Tags]"
+                      name="Tags" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Title]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ViewCount]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ViewCount]"
+                      name="ViewCount" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche BD stackoverflow.Paths[Sortie 0]"
+              endId="Package\Tâche BD stackoverflow\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie 0"
+              startId="Package\Tâche BD stackoverflow\Composant Script.Outputs[Sortie 0]" />
+            <path
+              refId="Package\Tâche BD stackoverflow.Paths[Sortie de source OLE DB]"
+              endId="Package\Tâche BD stackoverflow\Composant Script.Inputs[Entrée 0]"
+              name="Sortie de source OLE DB"
+              startId="Package\Tâche BD stackoverflow\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Tâche de flux de données"
       DTS:CreationName="Microsoft.Pipeline"
@@ -1286,144 +2759,195 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Tâche de flux de données\Destination de fichier plat"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Destination de fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
-              description="Destination de fichier plat"
-              localeId="2060"
-              name="Destination de fichier plat">
+              refId="Package\Tâche de flux de données\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
               <properties>
                 <property
-                  dataType="System.Boolean"
-                  description="Spécifie si les données remplaceront ou seront ajoutées au fichier de destination."
-                  name="Overwrite">true</property>
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
                 <property
-                  dataType="System.Null"
-                  description="Spécifie le texte à enregistrer sur le fichier de destination avant d'enregistrer des données."
-                  expressionType="Notify"
-                  name="Header" />
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
                 <property
                   dataType="System.Boolean"
-                  description="Quand le qualificateur de texte est activé, spécifie si le qualificateur de texte dans les données écrites dans le fichier de destination va être échappé ou non."
-                  name="EscapeQualifier">false</property>
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tâche de flux de données\Destination de fichier plat.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[outputManager]"
-                  connectionManagerRefId="Package.ConnectionManagers[outputManager]"
-                  name="FlatFileConnection" />
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+                  connectionManagerRefId="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
                   hasSideEffects="true"
-                  name="Entrée de destination de fichier plat">
+                  name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DateInput]"
-                      cachedDataType="date"
-                      cachedName="DateInput"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateInput]"
-                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateInput]" />
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayEnglishName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayEnglishName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DayEnglishName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayEnglishName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayEnglishName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayEnglishName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayFrenchName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayFrenchName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DayFrenchName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayFrenchName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayFrenchName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayFrenchName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[MonthFrenchName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[MonthFrenchName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="MonthFrenchName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthFrenchName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthFrenchName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[MonthFrenchName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DateKey]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DateKey]"
                       cachedDataType="ui8"
                       cachedName="DateKey"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateKey]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DateKey]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[MonthEnglishName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[MonthEnglishName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="MonthEnglishName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthEnglishName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthEnglishName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[MonthEnglishName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[WeekNumber]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[WeekNumber]"
                       cachedDataType="ui4"
                       cachedName="WeekNumber"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[WeekNumber]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[WeekNumber]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[WeekNumber]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayOfYearNumber]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayOfYearNumber]"
                       cachedDataType="ui4"
                       cachedName="DayOfYearNumber"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfYearNumber]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfYearNumber]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayOfYearNumber]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayOfWeekNumber]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayOfWeekNumber]"
                       cachedDataType="ui4"
                       cachedName="DayOfWeekNumber"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfWeekNumber]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfWeekNumber]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayOfWeekNumber]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateInput]"
-                      dataType="date"
-                      name="DateInput" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayEnglishName]"
-                      dataType="wstr"
-                      length="50"
-                      name="DayEnglishName" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayFrenchName]"
-                      dataType="wstr"
-                      length="50"
-                      name="DayFrenchName" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthFrenchName]"
-                      dataType="wstr"
-                      length="50"
-                      name="MonthFrenchName" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateKey]"
-                      dataType="ui8"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
+                      dataType="i4"
                       name="DateKey" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthEnglishName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayFrenchName]"
                       dataType="wstr"
-                      length="50"
+                      length="100"
+                      name="DayFrenchName" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayEnglishName]"
+                      dataType="wstr"
+                      length="100"
+                      name="DayEnglishName" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthFrenchName]"
+                      dataType="wstr"
+                      length="100"
+                      name="MonthFrenchName" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthEnglishName]"
+                      dataType="wstr"
+                      length="100"
                       name="MonthEnglishName" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[WeekNumber]"
-                      dataType="ui4"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[WeekNumber]"
+                      dataType="i4"
                       name="WeekNumber" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfYearNumber]"
-                      dataType="ui4"
-                      name="DayOfYearNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfWeekNumber]"
-                      dataType="ui4"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfWeekNumber]"
+                      dataType="i4"
                       name="DayOfWeekNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfYearNumber]"
+                      dataType="i4"
+                      name="DayOfYearNumber" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
             </component>
             <component
               refId="Package\Tâche de flux de données\Source du fichier plat"
@@ -1518,7 +3042,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <paths>
             <path
               refId="Package\Tâche de flux de données.Paths[Sortie 0]"
-              endId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+              endId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie 0"
               startId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0]" />
             <path
@@ -1531,6 +3055,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{93CF1A02-9ADD-4E1A-AA0B-2D420BF5E38D}"
+      DTS:From="Package\Tâche de flux de données"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Tâche BD stackoverflow" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
 <!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
@@ -1542,11 +3076,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="205,42"
           Id="Package\Tâche de flux de données"
-          TopLeft="247,182" />
+          TopLeft="257,56" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Tâche BD stackoverflow"
+          TopLeft="284,158" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="359.5,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23,60"
+              Start="0,0"
+              End="23,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="19,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19,30"
+                    Point2="23,30"
+                    Point3="23,34" />
+                  <mssgle:LineSegment
+                    End="23,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1562,21 +3134,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="166,42"
           Id="Package\Tâche de flux de données\Composant Script"
-          TopLeft="198,251" />
+          TopLeft="209,190" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie de source de fichier plat]"
-          TopLeft="282.5,130">
+          TopLeft="284,130">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,121"
+              EndConnector="8,60"
               Start="0,0"
-              End="0,113.5">
+              End="8,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,113.5" />
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="4,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,30"
+                    Point2="8,30"
+                    Point3="8,34" />
+                  <mssgle:LineSegment
+                    End="8,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1586,35 +3170,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="202,42"
-          Id="Package\Tâche de flux de données\Destination de fichier plat"
-          TopLeft="168,437" />
+          Size="177,42"
+          Id="Package\Tâche de flux de données\Destination OLE DB"
+          TopLeft="206,264" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie 0]"
-          TopLeft="281,293">
+          TopLeft="293.25,232">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12,144"
+              EndConnector="0,32"
               Start="0,0"
-              End="-12,136.5">
+              End="0,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,68"
-                    Point2="0,72"
-                    Point3="-4,72" />
-                  <mssgle:LineSegment
-                    End="-8,72" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8,72"
-                    Point2="-12,72"
-                    Point3="-12,76" />
-                  <mssgle:LineSegment
-                    End="-12,136.5" />
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1626,5 +3198,115 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Tâche BD stackoverflow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Tâche BD stackoverflow\Source OLE DB"
+          TopLeft="252,39" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Tâche BD stackoverflow\Destination OLE DB"
+          TopLeft="225,183" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Tâche BD stackoverflow\Composant Script"
+          TopLeft="237,114" />
+        <EdgeLayout
+          Id="Package\Tâche BD stackoverflow.Paths[Sortie de source OLE DB]"
+          TopLeft="330.5,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,33"
+              Start="0,0"
+              End="-10.5,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="-4,16.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,16.5"
+                    Point2="-10.5,16.5"
+                    Point3="-10.5,20.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche BD stackoverflow.Paths[Sortie 0]"
+          TopLeft="316.75,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche BD stackoverflow\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche BD stackoverflow\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

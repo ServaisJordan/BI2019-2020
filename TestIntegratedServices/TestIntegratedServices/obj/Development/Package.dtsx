@@ -11,8 +11,8 @@
   DTS:LocaleID="2060"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{2821EC27-0F8F-4C0A-A1B4-C2F50D1093A1}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{7C2C58CA-3572-4055-8B0F-D8AA9B75D012}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\HP\Desktop\BI\dates.txt">
+          DTS:ConnectionString="C:\Users\jorda\Desktop\BI2019-2020\dates.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="DateInput"
-              DTS:DTSID="{07003B2F-CBCC-4F9E-9E70-2F43C07AC70C}"
+              DTS:DTSID="{32B7D953-356D-4178-BCAC-E8D325677AF5}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -136,6 +136,21 @@
               DTS:DTSID="{2030C0C3-6AA3-46A2-804B-E07A9C00FF58}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2EFF443F-CE5D-44FB-A92E-28D63CCF2DE9}"
+      DTS:ObjectName="vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=vm-sql2.iesn.Be;User ID=1920_EtuGenerique;Initial Catalog=1920_etu35244_BIETLCommun;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwJ0We0CAUEKUkb5EqPygRgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADnaj0UgHQsnHC0LRCicE5y9+G40uAOq9PBSizJkWnpEgAAAAAOgAAAAAIAACAAAABuoa3FIwqOawIEbBt0iN6goItieS7iUTh5qgtEj8jBlSAAAACK9QvTooJSmx/GROVynPrH/QJ1nx8hGmVK2Fq4gOG+ekAAAADZQRiuLfNNOVLv6VVJ5t1/6UEIHKUN/gUbq7Auh8eZx/oRmPjzw2Zy5PS8J5IUJyU4sSMFi2/7KUio0FXiS+nr</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1286,144 +1301,195 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Tâche de flux de données\Destination de fichier plat"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Destination de fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
-              description="Destination de fichier plat"
-              localeId="2060"
-              name="Destination de fichier plat">
+              refId="Package\Tâche de flux de données\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
               <properties>
                 <property
-                  dataType="System.Boolean"
-                  description="Spécifie si les données remplaceront ou seront ajoutées au fichier de destination."
-                  name="Overwrite">true</property>
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
                 <property
-                  dataType="System.Null"
-                  description="Spécifie le texte à enregistrer sur le fichier de destination avant d'enregistrer des données."
-                  expressionType="Notify"
-                  name="Header" />
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
                 <property
                   dataType="System.Boolean"
-                  description="Quand le qualificateur de texte est activé, spécifie si le qualificateur de texte dans les données écrites dans le fichier de destination va être échappé ou non."
-                  name="EscapeQualifier">false</property>
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tâche de flux de données\Destination de fichier plat.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[outputManager]"
-                  connectionManagerRefId="Package.ConnectionManagers[outputManager]"
-                  name="FlatFileConnection" />
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+                  connectionManagerRefId="Package.ConnectionManagers[vm-sql2.iesn.Be.1920_etu35244_BIETLCommun.1920_EtuGenerique]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
                   hasSideEffects="true"
-                  name="Entrée de destination de fichier plat">
+                  name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DateInput]"
-                      cachedDataType="date"
-                      cachedName="DateInput"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateInput]"
-                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateInput]" />
-                    <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayEnglishName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayEnglishName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DayEnglishName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayEnglishName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayEnglishName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayEnglishName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayFrenchName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayFrenchName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="DayFrenchName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayFrenchName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayFrenchName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayFrenchName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[MonthFrenchName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[MonthFrenchName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="MonthFrenchName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthFrenchName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthFrenchName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[MonthFrenchName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DateKey]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DateKey]"
                       cachedDataType="ui8"
                       cachedName="DateKey"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateKey]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DateKey]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[MonthEnglishName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[MonthEnglishName]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="MonthEnglishName"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthEnglishName]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthEnglishName]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[MonthEnglishName]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[WeekNumber]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[WeekNumber]"
                       cachedDataType="ui4"
                       cachedName="WeekNumber"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[WeekNumber]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[WeekNumber]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[WeekNumber]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayOfYearNumber]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayOfYearNumber]"
                       cachedDataType="ui4"
                       cachedName="DayOfYearNumber"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfYearNumber]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfYearNumber]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayOfYearNumber]" />
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].Columns[DayOfWeekNumber]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DayOfWeekNumber]"
                       cachedDataType="ui4"
                       cachedName="DayOfWeekNumber"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfWeekNumber]"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfWeekNumber]"
                       lineageId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0].Columns[DayOfWeekNumber]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateInput]"
-                      dataType="date"
-                      name="DateInput" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayEnglishName]"
-                      dataType="wstr"
-                      length="50"
-                      name="DayEnglishName" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayFrenchName]"
-                      dataType="wstr"
-                      length="50"
-                      name="DayFrenchName" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthFrenchName]"
-                      dataType="wstr"
-                      length="50"
-                      name="MonthFrenchName" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DateKey]"
-                      dataType="ui8"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
+                      dataType="i4"
                       name="DateKey" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[MonthEnglishName]"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayFrenchName]"
                       dataType="wstr"
-                      length="50"
+                      length="100"
+                      name="DayFrenchName" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayEnglishName]"
+                      dataType="wstr"
+                      length="100"
+                      name="DayEnglishName" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthFrenchName]"
+                      dataType="wstr"
+                      length="100"
+                      name="MonthFrenchName" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MonthEnglishName]"
+                      dataType="wstr"
+                      length="100"
                       name="MonthEnglishName" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[WeekNumber]"
-                      dataType="ui4"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[WeekNumber]"
+                      dataType="i4"
                       name="WeekNumber" />
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfYearNumber]"
-                      dataType="ui4"
-                      name="DayOfYearNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat].ExternalColumns[DayOfWeekNumber]"
-                      dataType="ui4"
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfWeekNumber]"
+                      dataType="i4"
                       name="DayOfWeekNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DayOfYearNumber]"
+                      dataType="i4"
+                      name="DayOfYearNumber" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
             </component>
             <component
               refId="Package\Tâche de flux de données\Source du fichier plat"
@@ -1518,7 +1584,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <paths>
             <path
               refId="Package\Tâche de flux de données.Paths[Sortie 0]"
-              endId="Package\Tâche de flux de données\Destination de fichier plat.Inputs[Entrée de destination de fichier plat]"
+              endId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie 0"
               startId="Package\Tâche de flux de données\Composant Script.Outputs[Sortie 0]" />
             <path
@@ -1586,35 +1652,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="202,42"
-          Id="Package\Tâche de flux de données\Destination de fichier plat"
-          TopLeft="168,437" />
+          Size="177,42"
+          Id="Package\Tâche de flux de données\Destination OLE DB"
+          TopLeft="221,379" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie 0]"
           TopLeft="281,293">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12,144"
+              EndConnector="28.5,86"
               Start="0,0"
-              End="-12,136.5">
+              End="28.5,78.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68" />
+                    End="0,39" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,68"
-                    Point2="0,72"
-                    Point3="-4,72" />
+                    Point1="0,39"
+                    Point2="0,43"
+                    Point3="4,43" />
                   <mssgle:LineSegment
-                    End="-8,72" />
+                    End="24.5,43" />
                   <mssgle:CubicBezierSegment
-                    Point1="-8,72"
-                    Point2="-12,72"
-                    Point3="-12,76" />
+                    Point1="24.5,43"
+                    Point2="28.5,43"
+                    Point3="28.5,47" />
                   <mssgle:LineSegment
-                    End="-12,136.5" />
+                    End="28.5,78.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1626,5 +1692,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
